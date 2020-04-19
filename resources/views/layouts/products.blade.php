@@ -1,5 +1,5 @@
 <div class="container">
-
+  
   <div class="row">
     <div class="col-lg-3">
 
@@ -53,7 +53,7 @@
               <h4 class="card-title">
                 <a href="{{route('updateproduct',$product->id)}}">{{$product->name}} ({{$product->stock}})</a>
               </h4>
-              <h5>{{$product->price}} </h5>
+              <h5>{{rupiah($product->price)}} </h5>
 
               <p class="card-text">{{$product->description}}</p>
             </div>

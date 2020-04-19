@@ -19,6 +19,7 @@ class ProductTableSeeder extends Seeder
             'stock' => 10,
             'price' => $faker->numberBetween($min = 3000, $max = 9000), // 8567
             'image' => 'https://via.placeholder.com/150'
-        ]);}
+        ]);
+    }
     }
 }

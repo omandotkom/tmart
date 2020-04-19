@@ -13,7 +13,7 @@ class ProductController extends Controller
     public function show()
     {
         $category = Category::all();
-        return view('layouts.index', ['content' => 'addproduct', 'categories' => $category]);
+        return view('layouts.index', ['content' => 'addproduct', 'mode' => "tambah",'categories' => $category]);
     }
     public function showbycategory($category)
     {

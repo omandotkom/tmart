@@ -26,7 +26,6 @@
                             <i class="fa fa-user-o"></i> {{Auth::user()->name}}
                         </label>
                         <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                            <a class="dropdown-item" href="">Profile</a>
                             <a class="dropdown-item" href="{{route('userlogout')}}">Logout</a>
                         </div>
                     </div>

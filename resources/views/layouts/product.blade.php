@@ -46,7 +46,7 @@
       @endif
 
       @else
-      <i class="fa fa-plus"></i> View Product</h1>
+      <i class="fa fa-info-circle"></i> View Product</h1>
       @php
       $edit = false;
       @endphp
@@ -104,7 +104,7 @@
                   @if(Auth::user()->role != "buyer")
                   <input type="numeric" class="form-control" id="price" value="@if(isset($product)){{$product->price}}@endif" required name="price" placeholder="Enter product's price">
                   @else
-                  <br><label id="price">{{$product->price}}<label>
+                  <br><label id="price">{{rupiah($product->price)}}<label>
                       @endif
                 </div>
                 <div class="form-group">
@@ -126,7 +126,7 @@
                 <div class="form-group">
                   <strong><label for="category">Product Category</label></strong>
                   @if(Auth::user()->role != "buyer")
-                  <select name = "category" class="custom-select">
+                  <select name="category" class="custom-select">
                     <option selected>Select Product Category</option>
                     @foreach($categories as $cat)
                     <option value="{{$cat->id}}">{{$cat->name}}</option>
@@ -144,7 +144,7 @@
         </div>
 
       </div>
-      @if($content != "addproduct")
+      @if(!isset($mode))
       <div class="row my-4">
         <div class="card w-100">
           <h5 class="card-header">Product Comment</h5>

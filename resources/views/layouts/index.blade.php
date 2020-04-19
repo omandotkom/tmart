@@ -24,7 +24,12 @@
 </head>
 
 <body>
-
+@php
+  function rupiah($angka){
+  $hasil_rupiah = "Rp " . number_format($angka,2,',','.');
+  return $hasil_rupiah;
+  }
+@endphp
   <!-- Navigation -->
   @include('layouts.navbar')
 
@@ -58,7 +63,7 @@
   <!-- /.container -->
 
   <!-- Footer -->
-  
+  @include('layouts.footer')
   <!-- Bootstrap core JavaScript -->
   <script src="{{url('shop/vendor/jquery/jquery.min.js')}}"></script>
   <script src="{{url('shop/vendor/bootstrap/js/bootstrap.bundle.min.js')}}"></script>

@@ -34,14 +34,14 @@
                 $totalitem = $product->product->price * $product->product_quantity;
                 $grandtotal = $grandtotal + $totalitem;
                 @endphp
-                <dd class="col-sm-9">Rp. {{$totalitem}}</dd>
+                <dd class="col-sm-9">{{rupiah($totalitem)}}</dd>
                 @endforeach
 
                 <dt class="col-sm-3">Ongkos Kirim</dt>
                 @php
                 $grandtotal = $grandtotal + $ongkir;
                 @endphp
-                <dd class="col-sm-9">Rp. {{$ongkir}}</dd>
+                <dd class="col-sm-9">{{rupiah($ongkir)}}</dd>
               </dl>
             </div>
             <h5 class="card-title text-center mt-1">Payment Method</h5>
@@ -65,7 +65,7 @@
             <h5 class="card-title text-center mt-1">Cara Membayar</h5>
             <ol>
               <li>Pilih salah satu metode pembayaran yang tertera di atas.</li>
-              <li>Nominal yang harus di transfer adalah <b>Rp. {{$grandtotal}}.</b></li>
+              <li>Nominal yang harus di transfer adalah <b>{{rupiah($grandtotal)}}.</b></li>
               <li>Pastikan nominal yang ditransfer tepat.</li>
               <li>Screenshoot (jika dengan m-banking) atau foto bukti pembayaran (jika dari atm).</li>
               <li>Unggah bukti pembayaran di kolom <b>Bukti Pembayaran</b></li>

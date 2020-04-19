@@ -42,7 +42,7 @@
             <tr>
               <th scope="col">Item</th>
               <th scope="col" class="w-25">Picture</th>
-              <th scope="col">Price</th>
+              <th scope="col">Price / item</th>
               <th scope="col">Quantity</th>
             </tr>
           </thead>
@@ -51,7 +51,7 @@
             <tr>
               <td scope="row"><a href="{{route('updateproduct',$product->product->id)}}">{{$product->product->name}}</a></td>
               <td><a href="{{route('updateproduct',$product->product->id)}}"><img src="{{$product->product->image}}" style="max-width : 15%" class="img-fluid img-thumbnail d-block rounded" /></a></td>
-              <td>{{$product->product->price}} / item</td>
+              <td>{{rupiah($product->product->price)}}</td>
               <td>
                 <div class="input-group">
                   <input type="numeric" class="form-control" value="{{$product->product_quantity}}" id="cart{{$product->id}}" aria-label="Item's Quantity" aria-describedby="basic-addon2">
