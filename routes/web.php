@@ -26,12 +26,12 @@ Auth::routes();
 Route::get('/home', 'IndexController@show')->name('home');
 
 Route::get('/checkout','CheckoutController@show')->name('checkout')->middleware('auth');
-Route::post('/payments','PaymentController@show')->name('payment');
-Route::post('/order/store','OrderController@store')->name('order');
-Route::get('/order','OrderController@show')->name('orderlist');
-Route::post('/order/update/{id}/{status}','OrderController@update')->name('updateorderstatus');
+Route::post('/payments','PaymentController@show')->name('payment')->middleware('auth');;
+Route::post('/order/store','OrderController@store')->name('order')->middleware('auth');;
+Route::get('/order','OrderController@show')->name('orderlist')->middleware('auth');;
+Route::post('/order/update/{id}/{status}','OrderController@update')->name('updateorderstatus')->middleware('auth');;
 
-Route::get('/product','ProductController@show')->name('addproduct');
-Route::post('/product/save/{edit}','ProductController@store')->name("saveproduct");
-Route::get('/product/edit/{id}','ProductController@update')->name('updateproduct');
-Route::get('/product/remove/{id}','ProductController@remove')->name('removeproduct');
+Route::get('/product','ProductController@show')->name('addproduct')->middleware('auth');;
+Route::post('/product/save/{edit}','ProductController@store')->name("saveproduct")->middleware('auth');;
+Route::get('/product/edit/{id}','ProductController@update')->name('updateproduct')->middleware('auth');;
+Route::get('/product/remove/{id}','ProductController@remove')->name('removeproduct')->middleware('auth');;
