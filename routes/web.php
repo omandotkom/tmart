@@ -20,7 +20,7 @@ Route::get('/user/logout',function(){
 Route::get('/', 'IndexController@show')->name('index');
 Route::get('/cart/add/{product_id?}/{quantity?}','CartController@store')->name('addtocart')->middleware('auth');
 Route::get('/cart','CartController@show')->name('showcart')->middleware('auth');
-Route::get('/cart/delete/{cart_id}','CartController@delete')->name('removeitem')->middleware('auth');
+Route::get('/cart/delete/{cart_id}','CartController@delete')->name('removeitem')->middleware('auth','admin');
 Auth::routes();
 
 Route::get('/home', 'IndexController@show')->name('home');
@@ -32,6 +32,10 @@ Route::get('/order','OrderController@show')->name('orderlist')->middleware('auth
 Route::post('/order/update/{id}/{status}','OrderController@update')->name('updateorderstatus')->middleware('auth');;
 
 Route::get('/product','ProductController@show')->name('addproduct')->middleware('auth');;
-Route::post('/product/save/{edit}','ProductController@store')->name("saveproduct")->middleware('auth');;
-Route::get('/product/edit/{id}','ProductController@update')->name('updateproduct')->middleware('auth');;
+Route::post('/product/save/{edit}','ProductController@store')->name("saveproduct")->middleware('auth','admin');;
+Route::get('/product/detil/{id}','ProductController@update')->name('updateproduct')->middleware('auth');;
 Route::get('/product/remove/{id}','ProductController@remove')->name('removeproduct')->middleware('auth');;
+
+Route::post('product/comment','CommentController@store')->name('comment')->middleware('auth');
+Route::get('/users','UserController@show')->name('viewusers')->middleware('auth','admin');
+Route::get('/products/category/{category}','ProductController@showbycategory')->name('showbycategory');

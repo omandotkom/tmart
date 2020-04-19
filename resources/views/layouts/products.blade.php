@@ -18,13 +18,13 @@
         </ol>
         <div class="carousel-inner" role="listbox">
           <div class="carousel-item active">
-            <img class="d-block img-fluid" src="http://placehold.it/900x350" alt="First slide">
+            <img class="d-block img-fluid" src="{{url('/images/slide/1.jpg')}}" alt="First slide">
           </div>
           <div class="carousel-item">
-            <img class="d-block img-fluid" src="http://placehold.it/900x350" alt="Second slide">
+            <img class="d-block img-fluid" src="{{url('/images/slide/2.jpg')}}" alt="Second slide">
           </div>
           <div class="carousel-item">
-            <img class="d-block img-fluid" src="http://placehold.it/900x350" alt="Third slide">
+            <img class="d-block img-fluid" src="{{url('/images/slide/3.jpg')}}" alt="Third slide">
           </div>
         </div>
         <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
@@ -48,7 +48,7 @@
         @foreach($products as $product)
         <div class="col-lg-4 col-md-6 mb-4">
           <div class="card h-100">
-            <a href="{{route('updateproduct',$product->id)}}"><img class="card-img-top img-fluid" src="{{$product->image}}" alt="{{$product->name}}"></a>
+            <a href="{{route('updateproduct',$product->id)}}"><img style="max-width : 200px; max-height : 200px;" class="card-img-top d-block mt-1 mx-auto img-fluid rounded" src="{{$product->image}}" alt="{{$product->name}}"></a>
             <div class="card-body">
               <h4 class="card-title">
                 <a href="{{route('updateproduct',$product->id)}}">{{$product->name}} ({{$product->stock}})</a>
@@ -65,8 +65,11 @@
                 <a class="btn btn-primary btn-sm" href="{{route('updateproduct',$product->id)}}" role="button"><i class="fa fa-pencil-square-o"></i></a>
 
                 @else
+                @if($product->stock> 0)
                 <a class="btn btn-primary btn-sm" href="{{route('addtocart',['product_id' => $product->id,'quantity' => 1])}}" role="button"><i class="fa fa-cart-plus"></i></a>
-
+                @else
+                Out of Stock
+                @endif
                 @endif
               </div>
             </div>

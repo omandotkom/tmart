@@ -48,6 +48,9 @@
     @case('payment')
     @include('layouts.payment')
     @break
+    @case('viewusers')
+    @include('layouts.users')
+    @break
     @default
     @include('layouts.products')
     @break

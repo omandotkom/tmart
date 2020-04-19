@@ -29,12 +29,7 @@
     <div class="col-lg-3">
 
       <h1 class="my-4">T-Mart</h1>
-      <div class="list-group">
-        <a href="#" class="list-group-item">Category 1</a>
-        <a href="#" class="list-group-item">Category 2</a>
-        <a href="#" class="list-group-item">Category 3</a>
-      </div>
-
+     @include('layouts.listsidebar')
     </div>
     <!-- /.col-lg-3 -->
 
@@ -46,6 +41,7 @@
           <thead class="thead-light">
             <tr>
               <th scope="col">Item</th>
+              <th scope="col" class="w-25">Picture</th>
               <th scope="col">Price</th>
               <th scope="col">Quantity</th>
             </tr>
@@ -53,7 +49,8 @@
           <tbody>
             @foreach($itemlist as $product)
             <tr>
-              <td scope="row">{{$product->product->name}}</td>
+              <td scope="row"><a href="{{route('updateproduct',$product->product->id)}}">{{$product->product->name}}</a></td>
+              <td><a href="{{route('updateproduct',$product->product->id)}}"><img src="{{$product->product->image}}" style="max-width : 15%" class="img-fluid img-thumbnail d-block rounded" /></a></td>
               <td>{{$product->product->price}} / item</td>
               <td>
                 <div class="input-group">
@@ -61,7 +58,6 @@
                   <div class="input-group-append">
                     <a class="btn btn-primary input-group-text" onclick="changequantity('{{$product->id}}','#cart{{$product->id}}')" id="basic-addon2" role="button">Save</a>
                     <a class="btn btn-primary input-group-text" href="{{route('removeitem',$product->id)}}" id="basic-addon2" role="button"><i class="fa fa-trash"></i></a>
-
                   </div>
                 </div>
               </td>

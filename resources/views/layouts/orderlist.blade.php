@@ -78,12 +78,7 @@ JNE ${item.service} ${item.cost[0].etd} hari (${item.cost[0].value})
     <div class="col-lg-3">
 
       <h1 class="my-4">T-Mart</h1>
-      <div class="list-group">
-        <a href="#" class="list-group-item">Category 1</a>
-        <a href="#" class="list-group-item">Category 2</a>
-        <a href="#" class="list-group-item">Category 3</a>
-      </div>
-
+      @include('layouts.listsidebar')
     </div>
     <!-- /.col-lg-3 -->
 
@@ -109,8 +104,12 @@ JNE ${item.service} ${item.cost[0].etd} hari (${item.cost[0].value})
                 <tbody>
                   @foreach($order->detil as $detil)
                   <tr>
+                    @if (isset($detil->product))
                     <td>{{$detil->product->name}}</td>
-                    <td>{{$detil->product_quantity}} item(s)</td>
+                    <td>{{$detil->product_quantity}} item(s)</td> @else
+                    <td>PRODUCT_DELETED</td>
+                    <td>PRODUCT DELETED</td>
+                    @endif
                   </tr>
 
                   @endforeach
@@ -153,22 +152,22 @@ JNE ${item.service} ${item.cost[0].etd} hari (${item.cost[0].value})
               <form method="post" action="{{route('updateorderstatus',['id' => $order->id,'status'=>'Shipped'])}}">
                 @csrf
                 <div class="input-group">
-                <input type="text" class="form-control" required placeholder="Delivery Tracking ID" name="trackingid" aria-label="Delivery Tracking ID" aria-describedby="basic-addon{{$order->id}}">
-                <div class="input-group-append">
-                <button type="submit" id="basic-addon{{$order->id}}" class="btn btn-outline-primary btn-sm">Add Tracking ID</button>
-              
-                </div>
-            </div>
-            </form>
-            @break
-            @default
+                  <input type="text" class="form-control" required placeholder="Delivery Tracking ID" name="trackingid" aria-label="Delivery Tracking ID" aria-describedby="basic-addon{{$order->id}}">
+                  <div class="input-group-append">
+                    <button type="submit" id="basic-addon{{$order->id}}" class="btn btn-outline-primary btn-sm">Add Tracking ID</button>
 
-            @break
-            @endswitch
+                  </div>
+                </div>
+              </form>
+              @break
+              @default
+
+              @break
+              @endswitch
+            </div>
           </div>
-        </div>
-        @else
-        <div class="card-footer text-muted">
+          @else
+          <div class="card-footer text-muted">
             <div class="btn-group float-right btn-group-sm" role="group" aria-label="Action">
               @switch($order->status)
               @case('Shipped')
@@ -177,23 +176,23 @@ JNE ${item.service} ${item.cost[0].etd} hari (${item.cost[0].value})
                 <button type="submit" class="btn btn-outline-success btn-sm">Package Arrived</button>
               </form>
               @break
-            @default
+              @default
 
-            @break
-            @endswitch
+              @break
+              @endswitch
+            </div>
           </div>
+          @endif
         </div>
-        @endif
+        @endforeach
+
       </div>
-      @endforeach
 
+      <!-- /.row -->
     </div>
+    <!-- /.col-lg-9 -->
 
-    <!-- /.row -->
   </div>
-  <!-- /.col-lg-9 -->
-
-</div>
-<!-- /.row -->
+  <!-- /.row -->
 
 </div>
