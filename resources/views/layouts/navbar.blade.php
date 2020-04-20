@@ -11,10 +11,12 @@
                         <span class="sr-only">(current)</span>
                     </a>
                 </li>
+                @if(Auth::user() !== null and Auth::user()->role == "buyer")
                 <li class="nav-item">
                     <a class="nav-link" href="{{route('showcart')}}"><i class="fa fa-shopping-cart"></i> Cart @auth @if(isset($cart)) <sup><span class="badge badge-pill badge-danger">{{$cart}}</span><sup>
                         @endif @endauth</a>
                 </li>
+                @endif
                 @auth
                 
                 <li class="nav-item">

@@ -2,7 +2,7 @@
 
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\Hash;
-
+use Illuminate\Support\Carbon;
 class BuyerSeeder extends Seeder
 {
     /**
@@ -19,6 +19,7 @@ class BuyerSeeder extends Seeder
             'role' => "buyer",
             'password' => Hash::make('system3298'),
             'email' => $faker->email, // 8567
+            'created_at' => Carbon::now(),
         ]);
     }
 }

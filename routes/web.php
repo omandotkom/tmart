@@ -20,7 +20,7 @@ Route::get('/user/logout',function(){
 Route::get('/', 'IndexController@show')->name('index');
 Route::get('/cart/add/{product_id?}/{quantity?}','CartController@store')->name('addtocart')->middleware('auth');
 Route::get('/cart','CartController@show')->name('showcart')->middleware('auth');
-Route::get('/cart/delete/{cart_id}','CartController@delete')->name('removeitem')->middleware('auth','admin');
+Route::get('/cart/delete/{cart_id}','CartController@delete')->name('removeitem')->middleware('auth');
 Auth::routes();
 
 Route::get('/home', 'IndexController@show')->name('home');

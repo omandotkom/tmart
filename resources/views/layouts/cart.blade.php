@@ -57,7 +57,7 @@
                   <input type="numeric" class="form-control" value="{{$product->product_quantity}}" id="cart{{$product->id}}" aria-label="Item's Quantity" aria-describedby="basic-addon2">
                   <div class="input-group-append">
                     <a class="btn btn-primary input-group-text" onclick="changequantity('{{$product->id}}','#cart{{$product->id}}')" id="basic-addon2" role="button">Save</a>
-                    <a class="btn btn-primary input-group-text" href="{{route('removeitem',$product->id)}}" id="basic-addon2" role="button"><i class="fa fa-trash"></i></a>
+                    <a class="btn btn-danger input-group-text" href="{{route('removeitem',$product->id)}}" id="basic-addon2" role="button"><i class="fa fa-trash"></i></a>
                   </div>
                 </div>
               </td>
