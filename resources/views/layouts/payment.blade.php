@@ -43,7 +43,9 @@
                 @endphp
                 <dd class="col-sm-9">{{rupiah($ongkir)}}</dd>
               </dl>
+              
             </div>
+            <a href="{{$invoice}}" target="_blank" class="badge badge-info">Unduh Invoice</a>
             <h5 class="card-title text-center mt-1">Payment Method</h5>
 
             <div class="row my-4">
