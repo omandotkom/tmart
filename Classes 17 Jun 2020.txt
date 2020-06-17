@@ -1,0 +1,24 @@
+Daftar Class
+
+--class controller--
+CartController (f:storeapi(), store(),show(),delete())
+CheckoutController (f:show(), cities(),citiesdetail()),
+CommentController (f:store()),
+HomeController (f:construct(), index()),
+IndexController (f:show()),
+OrderController (f:store(),show(),update()),
+PaymentController (f:show()),
+ProductController (f:show(), showbycategory(), remove(), store(), update()),
+UserController (f:show()),
+LoginController (f:construct())(a:redirectTo),
+RegisterController (f:redirectTo), (f:construct())
+
+--class model --
+Cart (f:product(), user()), (a:table,fillable),
+Category (a:table,incrementing,fillable),
+Comment (f:user()), (a:table,fillable),
+Order (f:user(),detil()), (a:table,fillable),
+OrderDetail (f:product()), (a:table,fillable),
+Product (f:comments(),categoryproduct()), (a:table,fillable),
+User (f:orders()),(a:casts,hidden),
+
