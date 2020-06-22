@@ -13,8 +13,8 @@ class DatabaseSeeder extends Seeder
     {
          $this->call(CategoriesTableSeeder::class);
          $this->call(AdminTableSeeder::class);
-         $this->call(CommentSeeder::class);
-         $this->call(ProductTableSeeder::class);
-         $this->call(BuyerSeeder::class);
+         //$this->call(CommentSeeder::class);
+         //$this->call(ProductTableSeeder::class);
+         //$this->call(BuyerSeeder::class);
     }
 }

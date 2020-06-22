@@ -118,7 +118,7 @@
                 <div class="form-group">
                   <strong><label for="description">Product Description</label></strong>
                   @if(Auth::user()->role != "buyer")
-                  <textarea class="form-control" id="description" placeholder="Jl. Panjaitan no.34 rumah warna biru" name="description" rows="3">@if(isset($product)){{$product->description}}@endif</textarea>
+                  <textarea class="form-control" id="description" placeholder="Deskripsi barang" name="description" rows="3">@if(isset($product)){{$product->description}}@endif</textarea>
                   @else
                   <br> <label id="description text-wrap">{{$product->description}}<label>
                       @endif

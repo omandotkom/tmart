@@ -5,8 +5,10 @@ namespace App\Http\Controllers;
 use App\Cart;
 use App\Order;
 use App\OrderDetail;
+use App\OrderShipments;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+
 class OrderController extends Controller
 {
     public function store(Request $request){
@@ -44,6 +46,14 @@ class OrderController extends Controller
             $orderdetil->save();
             $c->delete();
         }
+        
+        $ordershipment = new OrderShipments();
+        $ordershipment->order_id = $order->id;
+        $ccr = explode(",",$request->courier);
+        $ordershipment->name = $ccr[0];
+        $ordershipment->type = $ccr[1];
+        $ordershipment->price = $ccr[2];
+        $ordershipment->save();
         return redirect()->route('orderlist');
         //return $imageName;
     }

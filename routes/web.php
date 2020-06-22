@@ -39,3 +39,10 @@ Route::get('/product/remove/{id}','ProductController@remove')->name('removeprodu
 Route::post('product/comment','CommentController@store')->name('comment')->middleware('auth');
 Route::get('/users','UserController@show')->name('viewusers')->middleware('auth','admin');
 Route::get('/products/category/{category}','ProductController@showbycategory')->name('showbycategory');
+
+Route::get('v',function(){
+    $logo = '/images/logotoko.jpg';
+    return view('layouts.invoice',['siteimg'=>$logo]);
+});
+Route::post('/invoice','InvoiceController@invoicebeforepayment')->name('generateinvoice');
+Route::get('/invoice/{order_id?}','InvoiceController@invoiceafterpayment')->name("generateinvoiceafterpayment");

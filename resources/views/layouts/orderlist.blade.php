@@ -132,7 +132,7 @@ JNE ${item.service} ${item.cost[0].etd} hari (${item.cost[0].value})
               $imgasset = asset("/images/".$order->image);
               @endphp
 
-              <p class="card-text">Total Transaction : {{rupiah($order->grandtotal)}} (<a href="{{$imgasset}}" target="_blank">Payment Info</a>)
+              <p class="card-text">Total Transaction : {{rupiah($order->grandtotal)}} - <a href="{{$imgasset}}" target="_blank">Payment Info</a> | <a href="{{route('generateinvoiceafterpayment',['order_id'=>$order->id])}}" target="_blank">Invoice</a>
             </div>
             <div class="row ml-2 my-4">
               <p class="card-text"></p><br>

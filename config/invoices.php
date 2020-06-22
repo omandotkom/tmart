@@ -2,7 +2,7 @@
 
 return [
 
-    /*
+  /*
     |--------------------------------------------------------------------------
     | Default Currency
     |--------------------------------------------------------------------------
@@ -11,9 +11,9 @@ return [
     | You can change it on each invoice individually.
     */
 
-    'currency' => 'IDR',
+  'currency' => 'IDR',
 
-    /*
+  /*
     |--------------------------------------------------------------------------
     | Default Decimal Precision
     |--------------------------------------------------------------------------
@@ -22,10 +22,10 @@ return [
     | to perform all the calculations.
     */
 
-   'decimals' => 2,
+  'decimals' => 2,
 
-   
-   /*
+
+  /*
    |--------------------------------------------------------------------------
    | Default Invoice Logo
    |--------------------------------------------------------------------------
@@ -34,8 +34,8 @@ return [
    | You can change it on each invoice individually.
    */
 
-  'logo' => 'http://i.imgur.com/t9G3rFM.png',
-
+  //'logo' => 'http://i.imgur.com/t9G3rFM.png',
+  'logo' => 'http://localhost:8000/images/logotoko.jpg',
   /*
   |--------------------------------------------------------------------------
   | Default Invoice Logo Height
@@ -45,7 +45,7 @@ return [
   | You can change it on each invoice individually.
   */
 
- 'logo_height' => 60,
+  'logo_height' => 60,
 
   /*
   |--------------------------------------------------------------------------
@@ -57,12 +57,12 @@ return [
   */
 
   'business_details' => [
-      'name'        => 'T-MART',
-      'phone'       => '081912539681',
-      'location'    => 'Jl. DI Panjaitan No.128, Pancurawis, Purwokerto Kidul, Kec. Purwokerto Selatan',
-      'zip'         => '53147',
-      'city'        => 'Kabupaten Banyumas',
-      'country'     => 'Indonesia',
+    'name'        => 'T-MART',
+    'phone'       => '081912539681',
+    'location'    => 'Jl. DI Panjaitan No.128, Pancurawis, Purwokerto Kidul, Kec. Purwokerto Selatan',
+    'zip'         => '53147',
+    'city'        => 'Kabupaten Banyumas',
+    'country'     => 'Indonesia',
   ],
 
   /*
@@ -90,12 +90,12 @@ return [
   */
   'tax_rates' => [
     [
-        'name'      => '',
-        'tax'       => 0,
-        'tax_type'  => 'percentage',
+      'name'      => '',
+      'tax'       => 0,
+      'tax_type'  => 'percentage',
     ],
   ],
-  
+
   /*
   | Default Invoice Due Date
   |--------------------------------------------------------------------------
@@ -104,7 +104,7 @@ return [
   | You can change it on each invoice individually.
   | You can set it null to remove the due date on all invoices.
   */
-  'due_date' => date('M dS ,Y',strtotime('+3 months')),
+  'due_date' => date('M dS ,Y', strtotime('+3 months')),
 
   /*
   | Default pagination parameter

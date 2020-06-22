@@ -43,9 +43,23 @@
                 @endphp
                 <dd class="col-sm-9">{{rupiah($ongkir)}}</dd>
               </dl>
-              
+
             </div>
-            <a href="{{$invoice}}" target="_blank" class="badge badge-info">Unduh Invoice</a>
+            <form enctype="multipart/form-data" target="_blank" method="post" action="{{route('generateinvoice')}}">
+              <input type="hidden" name="grandtotal" value="{{$grandtotal}}">
+              <input type="hidden" name="name" value="{{$request->name}}">
+              <input type="hidden" name="phone" value="{{$request->phone}}">
+              <input type="hidden" name="province" value="{{$request->provincename}}">
+              <input type="hidden" name="city" value="{{$request->cityname}}">
+              <input type="hidden" name="postalcode" value="{{$request->postalcode}}">
+              <input type="hidden" name="address" value="{{$request->alamat}}">
+              <input type="hidden" name="courier" value="{{$request->courier}}">
+              <input type="hidden" name="deliverycost" value="{{$request->deliverycost}}">
+              @csrf
+              <button type="submit" class="btn mx-auto btn-info">Unduh Invoice</button>
+
+            </form>
+
             <h5 class="card-title text-center mt-1">Payment Method</h5>
 
             <div class="row my-4">
@@ -72,7 +86,7 @@
               <li>Screenshoot (jika dengan m-banking) atau foto bukti pembayaran (jika dari atm).</li>
               <li>Unggah bukti pembayaran di kolom <b>Bukti Pembayaran</b></li>
             </ol>
-            <form  enctype="multipart/form-data" method="post" action="{{route('order')}}">
+            <form enctype="multipart/form-data" method="post" action="{{route('order')}}">
               <input type="hidden" name="grandtotal" value="{{$grandtotal}}">
               <input type="hidden" name="name" value="{{$request->name}}">
               <input type="hidden" name="phone" value="{{$request->phone}}">
@@ -83,15 +97,15 @@
               <input type="hidden" name="courier" value="{{$request->courier}}">
               @csrf
               <div class="form-group">
-            <label for="image">Bukti Pembayaran</label>
-            <input required type="file" accept="image/*" name="image" class="form-control @error('pembayaran') is-invalid @enderror" placeholder="Bukti pembayaraan" id="pembayaran">
-            @error('pembayaran')
-            <div class="alert alert-danger">{{ $message }}</div>
-            @enderror
-          </div>
-          
+                <label for="image">Bukti Pembayaran</label>
+                <input required type="file" accept="image/*" name="image" class="form-control @error('pembayaran') is-invalid @enderror" placeholder="Bukti pembayaraan" id="pembayaran">
+                @error('pembayaran')
+                <div class="alert alert-danger">{{ $message }}</div>
+                @enderror
+              </div>
+
               <button type="submit" class="btn float-right btn-primary">Upload</a>
-           
+
             </form>
           </div>
         </div>
