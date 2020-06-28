@@ -1,7 +1,9 @@
 <html>
 
 <head>
-    <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<title>Invoice</title>    
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.5.3/jspdf.min.js"></script>
     <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
     <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <style>
@@ -176,7 +178,6 @@
     </style>
     <script>
         $(document).ready(function() {
-            console.log("ready!");
             $("#printInvoice").click(function() {
                 Popup($('.invoice')[0].outerHTML);
 
@@ -186,10 +187,7 @@
                     return true;
                 }
             });
-        });
-        $('#printInvoice').click(function() {
-            console.log("fuck");
-
+            
         });
     </script>
 </head>
@@ -200,7 +198,8 @@
         <div class="toolbar hidden-print">
             <div class="text-right">
                 <button id="printInvoice" class="btn btn-info"><i class="fa fa-print"></i> Print</button>
-               </div>
+        
+            </div>
             <hr>
         </div>
         <div class="invoice overflow-auto">
@@ -235,9 +234,10 @@
                         <div class="col invoice-details">
                             <h1 class="invoice-id">INVOICE</h1>
                             <div class="date">Date of Invoice: @php echo date('D (d-M-Y)'); @endphp</div>
-                            
+
                         </div>
                     </div>
+                    <div id="elementH"></div>
                     <table border="0" cellspacing="0" cellpadding="0">
                         <thead>
                             <tr>
@@ -265,11 +265,11 @@
                             @php $num++; @endphp
                             @endforeach
                             <tr>
-                                
-                            @php
+
+                                @php
                                 $delivery = $request->courier;
                                 $delivery = explode(",", $delivery);
-                                
+
                                 @endphp
                                 <td class="no">{{$num}}</td>
                                 <td class="text-left">
@@ -286,7 +286,7 @@
                                 <td colspan="2">TOTAL</td>
                                 <td>{{$request->grandtotal}}</td>
                             </tr>
-                            
+
                         </tfoot>
                     </table>
                     <div class="notices">
