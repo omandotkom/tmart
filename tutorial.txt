@@ -1,0 +1,9 @@
+--LANGKAH INSTALASI--
+(hanya dilakukan sekali)
+1. Download & Install Visual Studio Code (https://code.visualstudio.com/Download#)
+2. Download & Install Xampp (https://www.apachefriends.org/xampp-files/7.4.7/xampp-windows-x64-7.4.7-0-VC15-installer.exe)
+2.a ikuti langkah berikut (https://sulhi.id/setting-path-environment-variable-di-windows-10/)
+3. Download & Install Composer (https://getcomposer.org/Composer-Setup.exe)
+4. Unduh dan ekstrak project kalian di link https://github.com/omandotkom/tmart dengan klik tombol Clone
+5. Buka direktori tmart setelah diekstrak, kemudian klik kanan lalu klik tulisan Open with Code (logonya biru)
+6. Pada Visual Studio Code, lihat toolbar bagian atas, ada tulisan Terminal  
