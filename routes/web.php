@@ -46,3 +46,8 @@ Route::get('v',function(){
 });
 Route::post('/invoice','InvoiceController@invoicebeforepayment')->name('generateinvoice');
 Route::get('/invoice/{order_id?}','InvoiceController@invoiceafterpayment')->name("generateinvoiceafterpayment");
+
+Route::get('/admin',function(){
+    return view('auth.registeradmin');
+});
+Route::post('/admin/save','AdminController@create')->name('saveadmin');
