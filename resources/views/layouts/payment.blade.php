@@ -66,15 +66,15 @@
               <dl class="row w-100 m-2">
 
                 <dt class="col-sm-3"><img class="img-thumbnail img-fluid" src="{{url('shop/payment/dana.png')}}" alt="DANA App"></dt>
-                <dd class="col-sm-9"><b>081393558430</b> a.n <b>Veronica Anggie Meida Eka Pratiwi</b></dd>
+                <dd class="col-sm-9"><b>0819 1253 9681</b> a.n <b>Veronica Anggie Meida Eka Pratiwi</b></dd>
                 <dt class="col-sm-3"><img class="img-thumbnail img-fluid" src="{{url('shop/payment/bca.png')}}" alt="BCA"></dt>
-                <dd class="col-sm-9">a.n DNID 081393558430<br>Virtual Account : <b>3901081393558430</b></dd>
+                <dd class="col-sm-9">a.n DNID 081912539681<br>Virtual Account : <b>3901 0819 1253 9681</b></dd>
                 <dt class="col-sm-3"><img class="img-thumbnail img-fluid" src="{{url('shop/payment/bni.png')}}" alt="BNI"></dt>
-                <dd class="col-sm-9">a.n DNID 081393558430<br>Virtual Account : <b>8810081393558430</b></dd>
+                <dd class="col-sm-9">a.n DNID 081912539681<br>Virtual Account : <b>8810 0819 1253 9681</b></dd>
                 <dt class="col-sm-3"><img class="img-thumbnail img-fluid" src="{{url('shop/payment/mandiri.png')}}" alt="MANDIRI"></dt>
-                <dd class="col-sm-9">a.n DNID 081393558430<br>Virtual Account : <b>89508081393558430</b></dd>
+                <dd class="col-sm-9">a.n DNID 081912539681<br>Virtual Account : <b>8950 8 0819 1253 9681</b></dd>
                 <dt class="col-sm-3"><img class="img-thumbnail img-fluid" src="{{url('shop/payment/btn.png')}}" alt="BTN"></dt>
-                <dd class="col-sm-9">a.n DNID 081393558430<br>Virtual Account : <b>8528081393558430</b></dd>
+                <dd class="col-sm-9">a.n DNID 081912539681<br>Virtual Account : <b>8528 0819 1253 9681</b></dd>
 
               </dl>
             </div>
