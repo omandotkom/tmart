@@ -66,7 +66,7 @@
               <dl class="row w-100 m-2">
 
                 <dt class="col-sm-3"><img class="img-thumbnail img-fluid" src="{{url('shop/payment/dana.png')}}" alt="DANA App"></dt>
-                <dd class="col-sm-9"><b>081393558430</b> a.n <b>Khalid Abdurrahman</b></dd>
+                <dd class="col-sm-9"><b>081393558430</b> a.n <b>Veronica Anggie Meida Eka Pratiwi</b></dd>
                 <dt class="col-sm-3"><img class="img-thumbnail img-fluid" src="{{url('shop/payment/bca.png')}}" alt="BCA"></dt>
                 <dd class="col-sm-9">a.n DNID 081393558430<br>Virtual Account : <b>3901081393558430</b></dd>
                 <dt class="col-sm-3"><img class="img-thumbnail img-fluid" src="{{url('shop/payment/bni.png')}}" alt="BNI"></dt>
